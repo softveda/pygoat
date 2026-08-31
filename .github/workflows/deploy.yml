@@ -33,10 +33,10 @@ jobs:
         continue-on-error: true
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }} # Server IP address
-          username: ${{ secrets.USERNAME }} # username for SSH login (e.g. ec2-user)
+          host: ${{ vars.HOST }} # Server IP address
+          username: ${{ vars.USERNAME }} # username for SSH login (e.g. ec2-user)
           key: ${{ secrets.KEY }} # private key of SSH user
-          port: ${{ secrets.PORT }} # ssh port, default is 22
+          port: ${{ vars.PORT }} # ssh port, default is 22
           script: |
             echo "Syncing git repo..."
             if [ ! -d "~/pygoat/.git" ]; then
