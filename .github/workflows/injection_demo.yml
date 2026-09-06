@@ -8,8 +8,8 @@ jobs:
   deploy-aws:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@4
-      - name: echo_title
+      - uses: actions/checkout@v4
+      - name: echo_issue_title
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
