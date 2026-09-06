@@ -13,5 +13,5 @@ jobs:
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          issue_title=${{ github.event.issue.title }}
+          issue_title="${{ github.event.issue.title }}"
           echo "${issue_title:0:10}"
