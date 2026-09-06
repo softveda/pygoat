@@ -1,0 +1,18 @@
+name: Injection Demo
+on: 
+  issues:
+    types:
+      - opened
+
+jobs:
+  deploy-aws:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@4
+      - name: echo_title
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          issue_title = ${{ github.event.issue.title }}
+          echo "${issue_title:0:10}"
+    
