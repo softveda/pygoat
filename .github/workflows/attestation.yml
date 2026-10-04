@@ -1,0 +1,19 @@
+name: build-attest-provenance
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      id-token: write
+      contents: read
+      attestations: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate artifact attestation
+        uses: actions/attest@v4
+        with:
+          subject-path: '${{ github.workspace }}'
