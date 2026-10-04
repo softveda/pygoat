@@ -11,6 +11,8 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 # Get a list of requirements  
 requirements = [i.strip() for i in open("requirements.txt").readlines()]  
 
+OPENROUTER_API_KEY="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"
+
 setup(
       name="pygoat",  
       version="1.2.0",  
